@@ -12,9 +12,4 @@ public class Pantallados extends AppCompatActivity {
         setContentView(R.layout.activity_pantallados);
     }
 
-
-
-
-
-
 }
