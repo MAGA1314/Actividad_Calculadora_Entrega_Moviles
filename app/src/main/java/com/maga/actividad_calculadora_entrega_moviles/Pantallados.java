@@ -137,7 +137,7 @@ public class Pantallados extends AppCompatActivity {
         }
 
         // Multiplicacion
-        if (operador == "*"){
+        if (operador == "X"){
             resultado = num1*num2;
         }
 
