@@ -100,12 +100,47 @@ public class Pantallados extends AppCompatActivity {
     }
     public  void resta(View view){
         operador = "-";
+        guardarnum1(view);
     }
     public  void multiplica(View view){
         operador = "*";
+        guardarnum1(view);
     }
     public  void divide(View view){
         operador = "/";
+        guardarnum1(view);
+    }
+    public void raiz(View view){
+        operador = "√";
+        guardarnum1(view);
+    }
+    public void seno(View view){
+        operador = "sin";
+        guardarnum1(view);
+    }
+    public void coseno(View view){
+        operador = "cos";
+        guardarnum1(view);
+    }
+    public void tangente(View view){
+        operador = "tan";
+        guardarnum1(view);
+    }
+    public void arcs(View view){
+        operador = "arcsin";
+        guardarnum1(view);
+    }
+    public void arcc(View view){
+        operador = "arccos";
+        guardarnum1((view));
+    }
+    public void arct(View view){
+        operador = "arctan";
+        guardarnum1((view));
+    }
+    public void potencia2(View view){
+        operador = "x²";
+        guardarnum1(view);
     }
 
     public void limpiar(View view) {
@@ -128,16 +163,16 @@ public class Pantallados extends AppCompatActivity {
         num2 = Float.parseFloat(tvResultado.getText().toString());
 
         // suma
-        if (operador == "+"){
+        if (operador.equals("+")){
             resultado = num1+num2;
         }
         // Resta
-        if (operador == "-"){
+        if (operador.equals("-")){
             resultado = num1-num2;
         }
 
         // Multiplicacion
-        if (operador == "X"){
+        if (operador == "*"){
             resultado = num1*num2;
         }
 
@@ -151,6 +186,96 @@ public class Pantallados extends AppCompatActivity {
                 tvResultado.setText("Error");
                 return;
             }
+        }
+
+        // Potencia 2
+        if (operador.equals("x²")){
+            if (num1 != 0){
+                double resultado1 = Math.pow(num1, 2);
+                tvResultado.setText(String.valueOf(resultado1));
+                return;
+            }else {
+                tvResultado.setText("Error");
+                return;
+            }
+        }
+
+        // Raiz
+        if (operador.equals("√")) {
+            if (num1 >= 0) {
+                double resultado1 = Math.sqrt(num1);
+                tvResultado.setText(String.valueOf(resultado1));
+                return;
+            } else {
+                tvResultado.setText("Error");
+                return;
+            }
+        }
+
+        // Sin
+        if (operador.equals("sin")){
+            if (num1 >= 0) {
+                double resultado1 = Math.sin(Math.toRadians(num1));
+                tvResultado.setText(String.valueOf(resultado1));
+                return;
+            }else {
+                tvResultado.setText("Error");
+                return;
+            }
+        }
+
+        // Cos
+        if (operador.equals("cos")){
+            if (num1 >= 0) {
+                double resultado1 = Math.cos(Math.toRadians(num1));
+                tvResultado.setText(String.valueOf(resultado1));
+                return;
+            }else {
+                tvResultado.setText("Error");
+                return;
+            }
+        }
+
+        // Tan
+        if (operador.equals("tan")){
+            if ( num1 >= 0){
+                double resultado1 = Math.tan(Math.toRadians(num1));
+                tvResultado.setText(String.valueOf(resultado1));
+                return;
+            }else {
+                tvResultado.setText("Error");
+                return;
+            }
+        }
+
+        // ArcSin
+        if (operador.equals("arcsin")) {
+            if (num1 >= -1 && num1 <= 1) {
+                double resultado1 = Math.toDegrees(Math.asin(num1));
+                tvResultado.setText(String.valueOf(resultado1));
+                return;
+            } else {
+                tvResultado.setText("Error");
+                return;
+            }
+        }
+
+        // ArcCos
+        if (operador.equals("arccos")) {
+            if (num1 >= -1 && num1 <= 1) {
+                double resultado1 = Math.toDegrees(Math.acos(num1));
+                tvResultado.setText(String.valueOf(resultado1));
+            } else {
+                tvResultado.setText("Error");
+            }
+            return;
+        }
+
+        // ArcTan
+        if (operador.equals("arctan")) {
+            double resultado1 = Math.toDegrees(Math.atan(num1));
+            tvResultado.setText(String.valueOf(resultado1));
+            return;
         }
 
         // Mostrar el resultado en tvResultado
