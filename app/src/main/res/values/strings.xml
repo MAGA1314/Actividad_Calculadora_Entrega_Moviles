@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Actividad_Calculadora_Entrega_Moviles</string>
+    <string name="resultadopaguna3">Resultado De La Operacion: </string>
+    <string name="volver">volver</string>
 </resources>

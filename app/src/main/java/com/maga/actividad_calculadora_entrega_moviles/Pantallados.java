@@ -2,14 +2,17 @@ package com.maga.actividad_calculadora_entrega_moviles;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ViewAnimator;
 
 public class Pantallados extends AppCompatActivity {
 
     TextView tvResultado;
+    Button btnpagina3;
     float num1 = 0.0f;
     float num2 = 0.0f;
 
@@ -20,7 +23,11 @@ public class Pantallados extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantallados);
 
+
         tvResultado = findViewById((R.id.tvResultado));
+        btnpagina3 = findViewById(R.id.btnpagina3);
+
+
     }
     // ----------------------------> Numeros
     public void  EscribirCero(View view){
@@ -142,6 +149,19 @@ public class Pantallados extends AppCompatActivity {
         operador = "x²";
         guardarnum1(view);
     }
+    public void pagina3(View view){
+        // operador ="->";  // No es necesario este operador
+
+        // Crear el Intent y pasar datos extras
+        Intent intent = new Intent(Pantallados.this, pantallatres.class);
+
+        // Puedes pasar datos extras como se muestra a continuación, aquí estoy pasando el texto actual de tvResultado
+        String resultadoActual = tvResultado.getText().toString();
+        intent.putExtra("RESULTADO", resultadoActual);
+
+        // Iniciar la actividad de la pantalla 3
+        startActivity(intent);
+    }
 
     public void limpiar(View view) {
         tvResultado.setText("0");
@@ -158,6 +178,7 @@ public class Pantallados extends AppCompatActivity {
         num1 = Float.parseFloat(tvResultado.getText().toString());
         tvResultado.setText("0");
     }
+
     public void resultadoigual(View view) {
         Float resultado = 0.0f;
         num2 = Float.parseFloat(tvResultado.getText().toString());

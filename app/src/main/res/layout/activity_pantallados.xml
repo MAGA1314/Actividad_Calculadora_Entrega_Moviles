@@ -118,7 +118,7 @@
         android:layout_margin="5dp"
         android:textSize="50dp"
         android:text="0"
-        android:textAlignment="viewEnd"
+        android:onClick="pantalla3"
         app:layout_constraintBottom_toTopOf="@+id/guideline22"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -459,5 +459,18 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
         app:layout_constraintTop_toTopOf="@+id/guideline28" />
+
+    <Button
+        android:id="@+id/btnpagina3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:onClick="pagina3"
+        android:text="->"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline28"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="@+id/guideline14"
+        app:layout_constraintTop_toTopOf="@+id/guideline27" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
