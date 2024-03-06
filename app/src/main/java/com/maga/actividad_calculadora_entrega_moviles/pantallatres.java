@@ -17,7 +17,7 @@ public class pantallatres extends AppCompatActivity {
         setContentView(R.layout.activity_pantallatres);
 
         Intent intent = getIntent();
-        TextView tvResultado3 = findViewById(R.id.tvresultado3); // Asegúrate de tener un TextView con este ID en el layout
+        TextView tvResultado3 = findViewById(R.id.tvresultado3);
         String resultado = intent.getStringExtra("RESULTADO");
 
         if (resultado != null) {
