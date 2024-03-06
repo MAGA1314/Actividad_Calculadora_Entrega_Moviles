@@ -150,14 +150,12 @@ public class Pantallados extends AppCompatActivity {
         guardarnum1(view);
     }
     public void pagina3(View view){
-        // operador ="->";  // No es necesario este operador
 
         // Crear el Intent y pasar datos extras
         Intent intent = new Intent(Pantallados.this, pantallatres.class);
-
         // Puedes pasar datos extras como se muestra a continuación, aquí estoy pasando el texto actual de tvResultado
         String resultadoActual = tvResultado.getText().toString();
-        intent.putExtra("RESULTADO", resultadoActual);
+        intent.putExtra("RESULTADO",resultadoActual);
 
         // Iniciar la actividad de la pantalla 3
         startActivity(intent);

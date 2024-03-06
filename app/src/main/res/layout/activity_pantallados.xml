@@ -118,7 +118,6 @@
         android:layout_margin="5dp"
         android:textSize="50dp"
         android:text="0"
-        android:onClick="pantalla3"
         app:layout_constraintBottom_toTopOf="@+id/guideline22"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
